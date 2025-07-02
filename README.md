@@ -21,7 +21,7 @@ This project combines five different AI/ML applications into a single FastAPI we
 ---
 
 ## 📂 Project Structure
-your_project/
+all_in_one/
 ├── app/
 │ ├── main.py # FastAPI combined backend
 │ ├── templates/ # All HTML files
