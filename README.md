@@ -42,19 +42,10 @@ your_project/
 git clone <your-repository-url>
 cd your_project
 2. Create a Virtual Environment
-bash
-Copy
-Edit
 python -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
 3. Install Dependencies
-bash
-Copy
-Edit
 pip install -r requirements.txt
 4. Run the App
-bash
-Copy
-Edit
 uvicorn app.main:app --reload
 Access the app at: http://localhost:8000
