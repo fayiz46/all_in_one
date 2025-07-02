@@ -35,12 +35,6 @@ your_project/
 ├── Dockerfile (optional)
 └── README.md
 
-yaml
-Copy
-Edit
-
----
-
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the Repository
