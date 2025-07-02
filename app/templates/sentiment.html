@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Customer Sentiment Analysis</h1>
+    <form action="/sentiment" method="post">
+        <input type="text" name="text" placeholder="Enter customer feedback" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if vader %}
+        <h2>Results:</h2>
+        <p><strong>Input Text:</strong> {{ input_text }}</p>
+        <p><strong>VADER Scores:</strong> {{ vader }}</p>
+        <p><strong>RoBERTa Scores:</strong> {{ roberta }}</p>
+    {% endif %}
+
+    <br><a href="/">Back to Home</a>
+</body>
+</html>

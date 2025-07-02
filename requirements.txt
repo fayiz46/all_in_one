@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+jinja2
+python-multipart
+transformers
+scipy
+nltk
+torch
+joblib
+scikit-learn
+opencv-python
+numpy
+Pillow
+tensorflow
+python-docx
+pytesseract
+python-multipart

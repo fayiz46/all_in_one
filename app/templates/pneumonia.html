@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pneumonia Detection</title>
+</head>
+<body>
+    <h1>Pneumonia Detection</h1>
+    <form action="/pneumonia" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <h2>Prediction: {{ result }}</h2>
+    {% endif %}
+
+    <br><a href="/">Back to Home</a>
+</body>
+</html>

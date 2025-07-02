@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Categorization</title>
+</head>
+<body>
+    <h1>News Categorization</h1>
+    <form action="/news" method="post">
+        <input type="text" name="news" placeholder="Enter news text" required>
+        <button type="submit">Categorize</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+
+    <br><a href="/">Back to Home</a>
+</body>
+</html>
