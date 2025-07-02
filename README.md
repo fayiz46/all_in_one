@@ -32,7 +32,6 @@ your_project/
 ├── uploads/ # Uploaded OCR files
 ├── data/ # Parsed OCR JSON files
 ├── requirements.txt
-├── Dockerfile (optional)
 └── README.md
 
 ## ⚙️ Setup Instructions
