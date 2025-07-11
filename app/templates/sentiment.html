@@ -1,22 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Customer Sentiment Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 700px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 12px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #2c3e50;
+        }
+
+        p {
+            text-align: left;
+            padding: 0 10px;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        strong {
+            color: #34495e;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        a:hover {
+            color: #21618c;
+        }
+    </style>
 </head>
 <body>
-    <h1>Customer Sentiment Analysis</h1>
-    <form action="/sentiment" method="post">
-        <input type="text" name="text" placeholder="Enter customer feedback" required>
-        <button type="submit">Analyze</button>
-    </form>
+    <div class="container">
+        <h1>Customer Sentiment Analysis</h1>
+        <form action="/sentiment" method="post">
+            <input type="text" name="text" placeholder="Enter customer feedback" required>
+            <br>
+            <button type="submit">Analyze</button>
+        </form>
 
-    {% if vader %}
-        <h2>Results:</h2>
-        <p><strong>Input Text:</strong> {{ input_text }}</p>
-        <p><strong>VADER Scores:</strong> {{ vader }}</p>
-        <p><strong>RoBERTa Scores:</strong> {{ roberta }}</p>
-    {% endif %}
+        {% if vader %}
+            <h2>Results:</h2>
+            <p><strong>Input Text:</strong> {{ input_text }}</p>
+            <p><strong>VADER Scores:</strong> {{ vader }}</p>
+            <p><strong>RoBERTa Scores:</strong> {{ roberta }}</p>
+        {% endif %}
 
-    <br><a href="/">Back to Home</a>
+        <a href="/">← Back to Home</a>
+    </div>
 </body>
 </html>

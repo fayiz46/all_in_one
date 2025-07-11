@@ -1,23 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>OCR Document Parser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #d4fc79, #96e6a1);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 700px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        img {
+            margin: 20px 0;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        pre {
+            text-align: left;
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-size: 0.95em;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        a:hover {
+            color: #21618c;
+        }
+    </style>
 </head>
 <body>
-    <h1>OCR Document Parser</h1>
-    <form action="/ocr" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" required>
-        <button type="submit">Upload & Parse</button>
-    </form>
+    <div class="container">
+        <h1>OCR Document Parser</h1>
+        <form action="/ocr" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <br>
+            <button type="submit">Upload & Parse</button>
+        </form>
 
-    {% if filename %}
-        <h2>Uploaded Image: {{ filename }}</h2>
-        <img src="{{ image_url }}" width="300">
-        <h3>Extracted Data:</h3>
-        <pre>{{ data }}</pre>
-        <a href="{{ json_path }}" download>Download Parsed JSON</a>
-    {% endif %}
+        {% if filename %}
+            <h2>Uploaded Image: {{ filename }}</h2>
+            <img src="{{ image_url }}" alt="Uploaded Image">
+            <h3>Extracted Data:</h3>
+            <pre>{{ data }}</pre>
+            <a href="{{ json_path }}" download>⬇ Download Parsed JSON</a>
+        {% endif %}
 
-    <br><a href="/">Back to Home</a>
+        <a href="/">← Back to Home</a>
+    </div>
 </body>
 </html>
